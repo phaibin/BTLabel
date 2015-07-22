@@ -267,6 +267,13 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 		default:
 			break;
 	}
+    
+    if (self.text.length > 0) {
+        textHeight += self.edgeInsets.top;
+        textHeight += self.edgeInsets.bottom;
+    } else {
+        textHeight = 0;
+    }
 	
 	return CGRectMake(originX, originY, textWidth, textHeight);
 }
