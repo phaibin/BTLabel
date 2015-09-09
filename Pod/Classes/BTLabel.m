@@ -198,7 +198,7 @@ const NSStringDrawingOptions kDrawingOptions = NSStringDrawingUsesLineFragmentOr
 - (CGRect)textRectForBounds:(CGRect)bounds limitedToNumberOfLines:(NSInteger)numberOfLines
 {
 	UIEdgeInsets edgeInsets = self.edgeInsets;
-	CGRect insettedBounds = UIEdgeInsetsInsetRect(bounds, edgeInsets);
+	CGRect insettedBounds = UIEdgeInsetsInsetRect(CGRectMake(0, 0, self.bounds.size.width, CGFLOAT_MAX), edgeInsets);
 	CGRect textRect = CGRectZero;
 	BOOL adjustsFontSizeToFitWidth = self.adjustsFontSizeToFitWidth && numberOfLines == 1;
 	
